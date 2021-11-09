@@ -11,4 +11,24 @@ const stamp = document.getElementById("container");
 
 const numbers = [];
 
-function generaNum();
+const userNumbers = [];
+
+generateNum();
+
+for(i = 0; i < numbers.length; i++){
+
+    document.getElementById("container").innerHTML += `
+    <div class="numbers">
+        <h1>${numbers[i]}</h1>
+    </div>`
+};
+
+const clock = setInterval(() => {
+    for (i = 0; i < numbers.length; i++)
+    var domanda = parseInt(prompt("scrivi i numeri che ricordi"));
+    userNumbers.push(domanda);
+    
+    clearInterval(clock);
+    console.log(userNumbers);
+
+}, 3000);
