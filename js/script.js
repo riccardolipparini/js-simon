@@ -8,27 +8,24 @@
 const stamp = document.getElementById("container");
 
 // creo 5 numeri casuali e li salvo dentro un array vuoto
-
-const numbers = [];
-
 const userNumbers = [];
-
-generateNum();
+const numbers = generateNum();
+let numero = document.querySelector(".numbers");
+let text = document.querySelector(".jstext");
 
 for(i = 0; i < numbers.length; i++){
-
     document.getElementById("container").innerHTML += `
     <div class="numbers">
         <h1>${numbers[i]}</h1>
     </div>`
-};
+}
 
-const clock = setInterval(() => {
-    for (i = 0; i < numbers.length; i++)
-    var domanda = parseInt(prompt("scrivi i numeri che ricordi"));
-    userNumbers.push(domanda);
-    
-    clearInterval(clock);
+setTimeout(() => {
+    for (i = 0; i < numbers.length; i++){
+        var domanda = parseInt(prompt("scrivi i numeri che ricordi"));
+        userNumbers.push(domanda);
+    }
+
     console.log(userNumbers);
+}, 1000);
 
-}, 3000);
