@@ -10,8 +10,7 @@ const stamp = document.getElementById("container");
 // creo 5 numeri casuali e li salvo dentro un array vuoto
 const userNumbers = [];
 const numbers = generateNum();
-let numero = document.querySelector(".numbers");
-let text = document.querySelector(".jstext");
+
 
 for(i = 0; i < numbers.length; i++){
     document.getElementById("container").innerHTML += `
@@ -23,9 +22,21 @@ for(i = 0; i < numbers.length; i++){
 setTimeout(() => {
     for (i = 0; i < numbers.length; i++){
         var domanda = parseInt(prompt("scrivi i numeri che ricordi"));
-        userNumbers.push(domanda);
-    }
 
+        if(numbers.includes(domanda)){
+            userNumbers.push(domanda);
+            document.getElementById("container").innerHTML += `
+    <div class="numbers">
+        <h1>${userNumbers[i]}</h1>
+    </div>`
+        }
+        
+    }
+    
     console.log(userNumbers);
 }, 1000);
+
+
+
+
 
